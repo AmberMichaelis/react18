@@ -5,6 +5,7 @@ import Alert from './components/Alert';
 import Button from './components/Button';
 import ListGroup from './components/ListGroup';
 import { BsFillCloudLightningRainFill } from 'react-icons/bs';
+import HeartButton from './components/HeartButton';
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -15,8 +16,6 @@ function App() {
     console.log(item);
   };
 
-  // const handleClick = () => console.log('clicked')
-
   return (
     <div>
       {alertVisible && (
@@ -25,6 +24,7 @@ function App() {
         </Alert>
       )}
       <BsFillCloudLightningRainFill color='#512888' size='45' />
+      <HeartButton onClick={() => console.log('clicked')}/>
       <ListGroup
         items={items}
         heading='Cities'
