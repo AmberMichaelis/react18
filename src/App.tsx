@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Alert from './components/Alert';
 import Button from './components/Button';
 import ListGroup from './components/ListGroup';
+import { BsFillCloudLightningRainFill } from 'react-icons/bs';
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -18,14 +19,19 @@ function App() {
 
   return (
     <div>
-     {alertVisible && <Alert onClose={() => setAlertVisibility(false)}>Messages Just <br/> <span>In the Span of Time</span></Alert>}
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}>
+          Incoming Storm Alert <br /> <span>Start Building the Ark</span>
+        </Alert>
+      )}
+      <BsFillCloudLightningRainFill color='#512888' size='45' />
       <ListGroup
         items={items}
         heading='Cities'
         onSelectItem={handleSelectItem}
       />
-      <Button color='danger' onClick={() => setAlertVisibility(true)}>
-        My Button
+      <Button color='dark' onClick={() => setAlertVisibility(true)}>
+        Select
       </Button>
     </div>
   );
